@@ -1,0 +1,26 @@
+User-agent: *
+Disallow:
+Disallow: *cart.php*
+Disallow: /order.php*
+Disallow: /images/swf/*
+Disallow: /img/swfview/*
+Disallow: /catalog/tradein/*
+Disallow: /useraccount*
+
+User-agent: Yahoo
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SolomonoBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+Sitemap: http://avtozvuk.ua/files/sitemap.xml
+Sitemap: http://avtozvuk.ua/files/sitemap_1.xml
+Sitemap: http://avtozvuk.ua/files/sitemap_2.xml
+
+Host: avtozvuk.ua

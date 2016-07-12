@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<span>Формат URL:  http://your_domain.com/robots.txt</span><br><br>
+<form method="POST" action="router.php">
+    <input type="text" name="url" value="http://">
+    <input type="submit" value="go">
+</form>
+<H1><?=isset($url)?$url:''?></H1>
+
+<table border="1px" width="800px" height="500px">
+    <tr>
+        <td rowspan="2">1</td>
+        <td rowspan="2">Проверка наличия файла robots.txt</td>
+        <td rowspan="2" class="backgr_<?=isset($fileExists)?$fileExists['css']:''?>">
+            <?=isset($fileExists)?$fileExists['text']:'н/д'?>
+        </td>
+        <td><?=isset($fileExists)?$fileExists['state']:'н/д'?></td>
+    </tr>
+    <tr>
+        <td><?=isset($fileExists)?$fileExists['recommend']:'н/д'?></td>
+
+    </tr>
+    <tr>
+        <td rowspan="2">6</td>
+        <td rowspan="2">Проверка указания директивы Host</td>
+        <td rowspan="2" class="backgr_<?=isset($checkHost)?$checkHost['css']:''?>">
+            <?=isset($checkHost)?$checkHost['text']:'н/д'?>
+        </td>
+        <td><?=isset($checkHost)?$checkHost['state']:'н/д'?></td>
+    </tr>
+    <tr>
+        <td><?=isset($checkHost)?$checkHost['recommend']:'н/д'?></td>
+    </tr>
+    <tr>
+        <td rowspan="2">8</td>
+        <td rowspan="2">Проверка количества директив Host, прописанных в файле</td>
+        <td rowspan="2" class="backgr_<?=isset($countHost)?$countHost['css']:''?>">
+            <?=isset($countHost)?$countHost['text']:'н/д'?></td>
+        <td><?=isset($countHost)?$countHost['state']:'н/д'?></td>
+    </tr>
+    <tr>
+        <td><?=isset($countHost)?$countHost['recommend']:'н/д'?></td>
+    </tr>
+    <tr>
+        <td rowspan="2">10</td>
+        <td rowspan="2">Проверка размера файла robots.txt</td>
+        <td rowspan="2" class="backgr_<?=isset($fileSize)?$fileSize['css']:''?>">
+            <?=isset($fileSize)?$fileSize['text']:'н/д'?></td>
+        <td><?=isset($fileSize)?$fileSize['state']:'н/д'?></td></td>
+    </tr>
+    <tr>
+        <td><?=isset($fileSize)?$fileSize['recommend']:'н/д'?></td></td>
+    </tr>
+    <tr>
+        <td rowspan="2">11</td>
+        <td rowspan="2">Проверка указания директивы Sitemap</td>
+        <td rowspan="2" class="backgr_<?=isset($checkSitemap)?$checkSitemap['css']:''?>">
+            <?=isset($checkSitemap)?$checkSitemap['text']:'н/д'?>
+        </td>
+        <td><?=isset($checkSitemap)?$checkSitemap['state']:'н/д'?></td>
+    </tr>
+    <tr>
+        <td><?=isset($checkSitemap)?$checkSitemap['recommend']:'н/д'?></td>
+    </tr>
+    <tr>
+        <td rowspan="2">12</td>
+        <td rowspan="2">Проверка кода ответа сервера для файла robots.txt</td>
+        <td rowspan="2" class="backgr_<?=isset($responseCode)?$responseCode['css']:''?>">
+            <?=isset($responseCode)?$responseCode['text']:'н/д'?>
+        </td>
+        <td><?=isset($responseCode)?$responseCode['state']:'н/д'?></td>
+    </tr>
+    <tr>
+        <td><?=isset($responseCode)?$responseCode['recommend']:'н/д'?></td>
+    </tr>
+</table>
+<br>
+<span>"н/д" - нет данных.</span>
+</body>
+</html>
